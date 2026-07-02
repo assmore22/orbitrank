@@ -74,14 +74,14 @@ export default function RegistryPage() {
         <div className="grid gap-3 p-4 sm:grid-cols-2">
           <div className="space-y-2 text-xs">
             <div className="flex items-center justify-between"><span className="text-muted">Contract</span><Hex value={contract} kind="contract" lead={10} tail={8} /></div>
-            <div className="flex items-center justify-between"><span className="text-muted">Network</span><span className="text-text">{DEPLOYMENT.network} · chain {DEPLOYMENT.chainId}</span></div>
+            <div className="flex items-center justify-between"><span className="text-muted">Network</span><span className="text-text">{DEPLOYMENT.network} | chain {DEPLOYMENT.chainId}</span></div>
             <div className="flex items-center justify-between"><span className="text-muted">Deployer</span><Hex value={DEPLOYMENT.deployer} /></div>
             <div className="flex items-center justify-between"><span className="text-muted">Deploy tx</span><Hex value={DEPLOYMENT.deployTxHash} kind="tx" /></div>
             <div className="flex items-center justify-between"><span className="text-muted">Faucet tx</span><Hex value={DEPLOYMENT.faucetTxHash} kind="tx" /></div>
             <a className="btn btn-ghost btn-xs mt-1" href={explorerContract(contract)} target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faArrowUpRightFromSquare} className="h-3 w-3" /> Contract on explorer</a>
           </div>
           <div className="overflow-hidden rounded-lg border border-line">
-            <div className="border-b border-line bg-surface px-3 py-1.5 label">10 write methods · proven on-chain</div>
+            <div className="border-b border-line bg-surface px-3 py-1.5 label">10 write methods | proven on-chain</div>
             <ul className="max-h-56 divide-y divide-line overflow-y-auto text-xs">
               {DEPLOYMENT.smoke.map((s) => (
                 <li key={s.hash} className="flex items-center justify-between gap-2 px-3 py-2">

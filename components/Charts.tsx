@@ -35,7 +35,7 @@ export function LeaderboardChart({ rows }: { rows: LeaderboardRow[] }) {
       .attr("fill", "#94A3B8").attr("font-size", 11).attr("font-family", "ui-monospace, monospace").text((d) => truncateHex(d.contributor, 6, 4));
     g.selectAll("text.val").data(data).join("text")
       .attr("x", (d) => x(d.qualityScore) + 6).attr("y", (d) => (y(d.claimId) ?? 0) + y.bandwidth() / 2 + 4)
-      .attr("fill", "#F8FAFC").attr("font-size", 11).attr("font-family", "ui-monospace, monospace").text((d) => `${d.qualityScore} · g${d.gamingRiskScore}`);
+      .attr("fill", "#F8FAFC").attr("font-size", 11).attr("font-family", "ui-monospace, monospace").text((d) => `${d.qualityScore} | g${d.gamingRiskScore}`);
   }, [rows]);
   return <svg ref={ref} role="img" aria-label="Project leaderboard" />;
 }

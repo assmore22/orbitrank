@@ -139,7 +139,7 @@ function ClaimsTab({
             <div className="min-w-0">
               <div className="flex items-center gap-2"><span className="text-sm font-semibold">#{c.claimId} {c.contributionTitle}</span><StatusChip status={c.status} kind="claim" /><VerdictBadge verdict={c.verdict} quality={c.qualityScore} gaming={c.gamingRiskScore} /></div>
               <p className="mt-1 line-clamp-2 text-sm text-muted">{c.contributionSummary}</p>
-              <div className="mt-1 text-xs text-muted">{c.contributionType} · contributor <Hex value={c.contributor} /></div>
+              <div className="mt-1 text-xs text-muted">{c.contributionType} | contributor <Hex value={c.contributor} /></div>
             </div>
           </div>
           {c.assessmentSummary && <p className="mt-2 text-xs text-muted">{c.assessmentSummary}</p>}

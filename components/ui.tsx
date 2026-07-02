@@ -53,8 +53,8 @@ export function VerdictBadge({ verdict, quality, gaming }: { verdict?: string; q
   return (
     <span className={`chip ${cls}`}>
       {(verdict || "unassessed").replace(/_/g, " ")}
-      {typeof quality === "number" && quality > 0 ? <span className="mono opacity-80">· q{quality}</span> : null}
-      {typeof gaming === "number" && gaming > 0 ? <span className="mono opacity-80">· g{gaming}</span> : null}
+      {typeof quality === "number" && quality > 0 ? <span className="mono opacity-80">| q{quality}</span> : null}
+      {typeof gaming === "number" && gaming > 0 ? <span className="mono opacity-80">| g{gaming}</span> : null}
     </span>
   );
 }

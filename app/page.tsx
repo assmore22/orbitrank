@@ -97,7 +97,7 @@ export default function OrbitWorkspacePage() {
                 <div className="flex items-start justify-between gap-2"><div className="text-sm font-semibold">{project.title}</div><StatusChip status={project.status} kind="project" /></div>
                 <div className="text-xs text-muted">maintainer <Hex value={project.maintainer} /></div>
                 <div className="flex flex-wrap gap-2 text-xs"><ExtLink href={project.repositoryUrl}>{hostOf(project.repositoryUrl)}</ExtLink>{project.docsUrl && <ExtLink href={project.docsUrl}>docs</ExtLink>}</div>
-                <div className="text-xs text-muted">{project.claimIds.length} contributions · min quality {project.minQualityScore}</div>
+                <div className="text-xs text-muted">{project.claimIds.length} contributions | min quality {project.minQualityScore}</div>
                 <p className="text-xs text-muted">Select an orbit node to inspect a contribution claim.</p>
                 <Link href={`/project/${project.projectId}`} className="btn btn-ghost w-full justify-center btn-xs">Open project <FontAwesomeIcon icon={faArrowRight} className="h-3 w-3" /></Link>
               </div>
@@ -108,7 +108,7 @@ export default function OrbitWorkspacePage() {
       {/* bottom leaderboard ribbon */}
       <section className="panel">
         <div className="flex items-center justify-between border-b border-line p-3">
-          <span className="label flex items-center gap-2"><FontAwesomeIcon icon={faRankingStar} className="text-accent" /> Leaderboard ribbon{project ? ` · ${project.title}` : ""}</span>
+          <span className="label flex items-center gap-2"><FontAwesomeIcon icon={faRankingStar} className="text-accent" /> Leaderboard ribbon{project ? ` | ${project.title}` : ""}</span>
           <button type="button" className="btn btn-ghost btn-xs" onClick={() => { claims.reload(); leaderboard.reload(); stats.reload(); projects.reload(); }}><FontAwesomeIcon icon={faRotateRight} className={`h-3 w-3 ${leaderboard.loading ? "animate-spin" : ""}`} /> Refresh</button>
         </div>
         <div className="p-4">
@@ -165,7 +165,7 @@ function CommandModal({ open, onClose, onCreated }: { open: boolean; onClose: ()
       <div ref={overlay} className="absolute inset-0 bg-bg/70 backdrop-blur-sm" onClick={onClose} />
       <div ref={panel} className="panel relative z-10 flex max-h-[88vh] w-[min(96vw,640px)] flex-col overflow-hidden shadow-pop">
         <div className="flex items-center justify-between border-b border-line p-4">
-          <h2 className="flex items-center gap-2 text-base font-semibold"><FontAwesomeIcon icon={faSatelliteDish} className="text-primary" /> Register project · command console</h2>
+          <h2 className="flex items-center gap-2 text-base font-semibold"><FontAwesomeIcon icon={faSatelliteDish} className="text-primary" /> Register project | command console</h2>
           <button type="button" className="text-muted hover:text-text" onClick={onClose}><FontAwesomeIcon icon={faXmark} /></button>
         </div>
         <div className="flex-1 space-y-3 overflow-y-auto p-4">

@@ -61,7 +61,7 @@ export default function ProfilePage() {
                 <div><div className="label">Reputation</div><div className={`text-3xl font-semibold tabular-nums ${toneClass(tier!.tone)}`}>{p.reputationScore}</div></div>
                 <span className={`chip ${chipClass(tier!.tone)}`}>{tier!.label}</span>
               </div>
-              <div className="text-[11px] text-muted">Last activity tick {p.lastActivity}{p.gamingFlags > 0 ? ` · ${p.gamingFlags} gaming flag(s)` : ""}</div>
+              <div className="text-[11px] text-muted">Last activity tick {p.lastActivity}{p.gamingFlags > 0 ? ` | ${p.gamingFlags} gaming flag(s)` : ""}</div>
             </div>
             <div className="panel p-4"><div className="label mb-2">Activity breakdown</div><ReputationChart profile={p} /></div>
           </div>

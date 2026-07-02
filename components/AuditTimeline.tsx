@@ -48,9 +48,9 @@ export function AuditTimeline({ records }: { records: AuditRecord[] }) {
           {r.summary && <div className="mt-0.5 text-xs text-muted">{r.summary}</div>}
           <div className="mt-1 flex flex-wrap items-center gap-2 text-[11px] text-muted">
             by <Hex value={r.actor} lead={6} tail={4} />
-            {r.claimId && <span>· claim #{r.claimId}</span>}
-            {r.challengeId && <span>· challenge #{r.challengeId}</span>}
-            {r.appealId && <span>· appeal #{r.appealId}</span>}
+            {r.claimId && <span>| claim #{r.claimId}</span>}
+            {r.challengeId && <span>| challenge #{r.challengeId}</span>}
+            {r.appealId && <span>| appeal #{r.appealId}</span>}
           </div>
         </li>
       ))}

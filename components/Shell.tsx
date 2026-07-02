@@ -5,11 +5,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faCircleNodes, faFileArrowUp, faScaleBalanced, faUserAstronaut, faLayerGroup, faTriangleExclamation, faSatelliteDish,
+  faCircleNodes, faFileArrowUp, faScaleBalanced, faUserAstronaut, faLayerGroup, faSatelliteDish,
 } from "@fortawesome/free-solid-svg-icons";
 import { OrbitRankLogo } from "./OrbitRankLogo";
 import { WalletConnect } from "./WalletConnect";
-import { WALLETCONNECT_PROJECT_ID } from "@/app/providers";
 import { hasContract, CONTRACT } from "@/lib/orbitrank";
 import { CHAIN_ID } from "@/lib/studionet";
 import { Hex } from "./ui";
@@ -57,12 +56,6 @@ export function Shell({ children }: { children: ReactNode }) {
       </header>
 
       <main className="mx-auto w-full max-w-[1500px] flex-1 space-y-4 p-4 lg:p-6">
-        {!WALLETCONNECT_PROJECT_ID && (
-          <div className="flex items-start gap-2.5 rounded-lg border border-warning/40 bg-warning/5 p-2.5 text-xs text-muted">
-            <FontAwesomeIcon icon={faTriangleExclamation} className="mt-0.5 h-3.5 w-3.5 text-warning" />
-            <span><span className="font-semibold text-text">Local dev:</span> no WalletConnect project id set - injected wallets (MetaMask) work; the WalletConnect QR flow is disabled. Set <span className="mono">NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID</span> to enable it.</span>
-          </div>
-        )}
         {children}
       </main>
     </div>
